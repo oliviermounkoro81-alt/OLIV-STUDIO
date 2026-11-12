@@ -3,210 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez OLIV STUDIO, votre studio créatif spécialisé en design graphique, affiches publicitaires, identité visuelle et motion design.">
-    <title>OLIV STUDIO | Studio Créatif</title>
+    <title>OLIV STUDIO | Studio créatif</title>
     <style>
         :root {
-            --bg-color: #0d0d0d;
-            --card-bg: #161616;
-            --text-main: #f5f5f7;
-            --text-muted: #a1a1a6;
-            --accent: #ff3b30;
-            --accent-glow: rgba(255, 59, 48, 0.3);
+            --bg-color: #0b0f17;
+            --card-bg: #121824;
+            --accent-color: #d4af37;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
         }
-
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         header {
-            min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            padding: 20px 5%;
+            background: rgba(11, 15, 23, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: var(--accent-color);
+        }
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 25px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        .hero {
             text-align: center;
-            padding: 2rem;
-            position: relative;
+            padding: 100px 20px;
         }
-
-        header h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            color: var(--accent-color);
+            font-size: 14px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
             font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff 30%, var(--text-muted) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
-
-        header p {
-            font-size: clamp(1.1rem, 2vw, 1.5rem);
+        .hero p {
+            font-size: 18px;
             color: var(--text-muted);
             max-width: 600px;
-            margin-bottom: 2rem;
+            margin: 0 auto 30px auto;
         }
-
-        .badge {
-            display: inline-block;
-            padding: 0.5rem 1.2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        section {
+        .projects-section {
+            padding: 60px 5%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 6rem 2rem;
         }
-
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
+        .section-title {
             text-align: center;
-            letter-spacing: -1px;
+            font-size: 36px;
+            margin-bottom: 50px;
+            font-weight: 700;
         }
-
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
-
         .card {
-            background-color: var(--card-bg);
-            border-radius: 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s, border-color 0.3s;
         }
-
         .card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.4);
         }
-
-        .card img, .card video {
+        .card-img {
             width: 100%;
-            height: 280px;
+            height: 250px;
             object-fit: cover;
-            display: block;
         }
-
         .card-content {
-            padding: 2rem;
+            padding: 25px;
         }
-
         .card-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
+            margin-top: 0;
+            font-size: 22px;
+            margin-bottom: 10px;
         }
-
         .card-content p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
         }
-
         footer {
             text-align: center;
-            padding: 4rem 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
             color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: var(--text-main);
-            text-decoration: none;
-            border-bottom: 1px solid var(--accent);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 80px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <div class="badge">Studio Créatif</div>
-        <h1>OLIV STUDIO</h1>
-        <p>Design graphique, identité visuelle, affiches publicitaires et motion design de haute précision.</p>
+        <div class="logo">OLIV STUDIO<span>.</span></div>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#projets">Projets</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <section>
-        <h2>Projets & Réalisations</h2>
+    <section class="hero" id="accueil">
+        <div class="hero-badge">STUDIO CRÉATIF</div>
+        <h1>Nous donnons vie à vos idées.</h1>
+        <p>Design graphique, identité visuelle, affiches publicitaires et motion design de haute précision.</p>
+    </section>
+
+    <section class="projects-section" id="projets">
+        <h2 class="section-title">Projets & Réalisations</h2>
         <div class="grid">
-            
             <div class="card">
-                <img src="identite-visuelle.jpeg" alt="Identité Visuelle">
+                <img src="identite-visuelle.jpeg" alt="Identité Visuelle" class="card-img">
                 <div class="card-content">
                     <h3>Identité Visuelle</h3>
                     <p>Création d'univers graphiques uniques, chartes graphiques et déclinaisons de marque percutantes.</p>
                 </div>
             </div>
-
             <div class="card">
-                <img src="affiche-pub.jpeg" alt="Affiche Publicitaire">
+                <img src="affiche-pub.jpeg" alt="Affiches Publicitaires" class="card-img">
                 <div class="card-content">
                     <h3>Affiches Publicitaires</h3>
                     <p>Conception visuelle d'affiches grand format axées sur l'impact visuel et la conversion.</p>
                 </div>
             </div>
-
             <div class="card">
-                <img src="creation-graphic.jpeg" alt="Création Graphique">
+                <img src="creation-graphic.jpeg" alt="Création Graphique" class="card-img">
                 <div class="card-content">
                     <h3>Création Graphique</h3>
                     <p>Visuels sur-mesure pour supports digitaux, réseaux sociaux et campagnes de communication.</p>
                 </div>
             </div>
-
             <div class="card">
-                <img src="comm-digitale.jpeg" alt="Communication Digitale">
+                <img src="comm-digitale.jpeg" alt="Communication Digitale" class="card-img">
                 <div class="card-content">
                     <h3>Communication Digitale</h3>
                     <p>Stratégie de contenu visuel et habillage graphique pour renforcer la présence en ligne.</p>
                 </div>
             </div>
-
             <div class="card">
-                <img src="evenementiel.jpeg" alt="Visuel Événementiel">
+                <img src="evenementiel.jpeg" alt="Visuel Événementiel" class="card-img">
                 <div class="card-content">
                     <h3>Visuel Événementiel</h3>
                     <p>Habillage graphique et signalétique pour valoriser vos événements professionnels.</p>
                 </div>
             </div>
-
             <div class="card">
-                <video controls autoplay muted loop>
-                    <source src="motion-design.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture de vidéos.
-                </video>
+                <video src="motion-design.mp4" class="card-img" controls muted></video>
                 <div class="card-content">
                     <h3>Motion Design</h3>
                     <p>Animation de logos, spots publicitaires dynamiques et contenus animés engageants.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 OLIV STUDIO. Tous droits réservés. Conçu avec passion.</p>
+    <footer id="contact">
+        <p>© 2026 OLIV STUDIO. Tous droits réservés. Conçu avec passion.</p>
     </footer>
-
 </body>
 </html>
